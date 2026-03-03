@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Mate - The Home Tutors</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--  oncontextmenu="return false"-->
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <div class="logo-icon">B</div>
+            <div class="logo-text">Brain <span>Mate</span></div>
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#teachers">Teachers</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+
+          <div class="auth-buttons">
+            <a href="#" class="btn signin-btn" id="openLogin">Login</a>
+            <a href="#" class="btn" id="openSignup">Sign Up</a>
+          </div>
+
+          <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="flower flower-1">
+        <i class="fas fa-seedling"></i>
+      </div>
+      <div class="flower flower-2">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Welcome to Home Tutor – Brain Mate</h1>
+          <p>
+            Your personalized learning partner for Classes 9 to 12. Expert
+            tutors, tailored curriculum, and one-on-one attention to help you
+            excel academically.
+          </p>
+          <a href="#" class="btn enroll-btn">📞 Enroll Now!</a>
+
+          <div class="yoga-banner">
+            <div class="yoga-icon">
+              <i class="fas fa-spa"></i>
+            </div>
+            <div>
+              <h3>Celebrating International Yoga Day!</h3>
+              <p>Join our special wellness session on June 21st</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Illustration would go here -->
+        <div
+          style="
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              45deg,
+              var(--primary-brown),
+              var(--light-brown)
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-yellow);
+          "
+        >
+          <i class="fas fa-chalkboard-teacher" style="font-size: 200px"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Student Login</h2>
+          <span class="close-modal" id="closeLogin">&times;</span>
+        </div>
+        <div class="form-container">
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="loginEmail">Email Address</label>
+              <input
+                type="email"
+                id="loginEmail"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input
+                type="password"
+                id="loginPassword"
+                class="form-control"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="form-btn">
+                Login to Your Account
+              </button>
+            </div>
+
+            <div class="form-footer">
+              <a href="#">Forgot your password?</a>
+            </div>
+          </form>
+
+          <div class="switch-form">
+            <p>
+              Don't have an account? <a href="#" id="switchToSignup">Sign Up</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Create Student Account</h2>
+          <span class="close-modal" id="closeSignup">&times;</span>
+        </div>
+        <div class="form-container">
+          <form id="signupForm">
+            <div class="form-group">
+              <label for="signupName">Full Name</label>
+              <input
+                type="text"
+                id="signupName"
+                class="form-control"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+            
+
+            <div class="form-group">
+              <label for="signupEmail">Email Address</label>
+              <input
+                type="email"
+                id="signupEmail"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="signupPhone">Phone Number</label>
+              <input
+                type="tel"
+                id="signupPhone"
+                class="form-control"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="signupClass">Class/Grade</label>
+              <select id="signupClass" class="form-control" required>
+                <option value="">Select your class</option>
+                <option value="9">Class 6</option>
+                <option value="9">Class 7</option>
+                <option value="9">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="signupPassword">Password</label>
+              <input
+                type="password"
+                id="signupPassword"
+                class="form-control"
+                placeholder="Create a password"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="form-btn">Create Account</button>
+            </div>
+          </form>
+
+          <div class="switch-form">
+            <p>
+              Already have an account?
+              <a href="#" id="switchToLogin">Sign In</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Brain Mate</h2>
+          <p>Personalized Education for Academic Excellence</p>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Our Mission & Vision</h3>
+            <p>
+              At Brain Mate, our mission is to provide high-quality,
+              personalized home tutoring that empowers students to achieve their
+              academic goals. We believe that every student deserves individual
+              attention and a customized learning approach.
+            </p>
+
+            <div class="mission-vision">
+              <p>
+                <strong>Vision:</strong> To become the most trusted home
+                tutoring service by delivering exceptional educational
+                experiences that transform students into confident, lifelong
+                learners.
+              </p>
+            </div>
+
+            <div class="benefits">
+              <h3>Benefits of Home Tuition</h3>
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-user-friends"></i>
+                </div>
+                <div>
+                  <h4>Personalized Attention</h4>
+                  <p>
+                    One-on-one sessions tailored to your learning style and
+                    pace.
+                  </p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                <div>
+                  <h4>Comfort of Home</h4>
+                  <p>Learn in a familiar environment without distractions.</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                  <h4>Better Progress Tracking</h4>
+                  <p>
+                    Regular assessments to monitor and enhance your performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="quote">
+              <p>
+                "Education is the most powerful weapon which you can use to
+                change the world."
+              </p>
+              <p>- Nelson Mandela</p>
+            </div>
+          </div>
+
+          <div class="about-image">
+            <!-- Image placeholder -->
+            <div
+              style="
+                width: 100%;
+                height: 100%;
+                min-height: 500px;
+                background: linear-gradient(
+                  45deg,
+                  var(--light-brown),
+                  var(--accent-yellow)
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--light-text);
+              "
+            >
+              <i
+                class="fas fa-book-open"
+                style="font-size: 120px; opacity: 0.8"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teachers Section -->
+    <section class="teachers" id="teachers">
+      <div class="flower flower-3">
+        <i class="fas fa-seedling"></i>
+      </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Expert Teachers</h2>
+          <p>Qualified and Passionate Educators</p>
+        </div>
+
+        <div class="teachers-grid">
+          <div class="teacher-card">
+            <div class="teacher-img">
+              <img src="ChatGPT rjmalviya.png" alt="" />
+              <!-- <i class="fas fa-user-graduate"></i> -->
+            </div>
+            <div class="teacher-info">
+              <h3>Dr. Anjali Sharma</h3>
+              <div class="teacher-subject">Physics Expert</div>
+              <p>
+                PhD in Physics with 12 years of teaching experience. Specializes
+                in making complex concepts simple.
+              </p>
+            </div>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-img">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="teacher-info">
+              <h3>Rajesh Kumar</h3>
+              <div class="teacher-subject">Mathematics Specialist</div>
+              <p>
+                M.Sc in Mathematics with 8 years of experience. Known for
+                innovative problem-solving techniques.
+              </p>
+            </div>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-img">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="teacher-info">
+              <h3>Priya Mehta</h3>
+              <div class="teacher-subject">Chemistry Mentor</div>
+              <p>
+                M.Sc Chemistry with 10 years of teaching experience. Focuses on
+                practical application of concepts.
+              </p>
+            </div>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-img">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="teacher-info">
+              <h3>Sanjay Patel</h3>
+              <div class="teacher-subject">Biology Educator</div>
+              <p>
+                M.Sc in Biotechnology with 7 years of experience. Makes biology
+                engaging with real-world examples.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="methodology">
+          <h3>Our Teaching Methodology</h3>
+          <p>
+            At Brain Mate, we follow a structured approach to ensure effective
+            learning:
+          </p>
+
+          <div class="method-steps">
+            <div class="step">
+              <div class="step-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h4>Assessment</h4>
+              <p>Evaluate student's current level and learning style</p>
+            </div>
+
+            <div class="step">
+              <div class="step-icon">
+                <i class="fas fa-pencil-alt"></i>
+              </div>
+              <h4>Custom Plan</h4>
+              <p>Create personalized learning roadmap</p>
+            </div>
+
+            <div class="step">
+              <div class="step-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <h4>Interactive Sessions</h4>
+              <p>Engaging lessons with practical examples</p>
+            </div>
+
+            <div class="step">
+              <div class="step-icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <h4>Progress Tracking</h4>
+              <p>Regular tests and performance analysis</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Courses</h2>
+          <p>Tailored Programs for Classes 9-12</p>
+        </div>
+
+        <div class="classes-tabs">
+          <button class="class-tab active" data-class="class9">Class 9</button>
+          <button class="class-tab" data-class="class10">Class 10</button>
+          <button class="class-tab" data-class="class11">Class 11</button>
+          <button class="class-tab" data-class="class12">Class 12</button>
+        </div>
+
+        <div class="class-content active" id="class9">
+          <h3>Class 9 Curriculum</h3>
+          <p>Building strong fundamentals for higher classes</p>
+
+          <div class="subjects-grid">
+            <div class="subject-card">
+              <div class="subject-icon">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h4>Mathematics</h4>
+              <p>Algebra, Geometry, Statistics</p>
+            </div>
+
+            <div class="subject-card">
+              <div class="subject-icon">
+                <i class="fas fa-atom"></i>
+              </div>
+              <h4>Science</h4>
+              <p>Physics, Chemistry, Biology</p>
+            </div>
+
+            <div class="subject-card">
+              <div class="subject-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <h4>English</h4>
+              <p>Grammar, Literature, Writing</p>
+            </div>
+
+            <div class="subject-card">
+              <div class="subject-icon">
+                <i class="fas fa-globe-asia"></i>
+              </div>
+              <h4>Social Studies</h4>
+              <p>History, Geography, Civics</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4>Concept Clarity</h4>
+            <p>Focus on understanding fundamentals rather than rote learning</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h4>Regular Tests</h4>
+            <p>
+              Weekly assessments to track progress and identify areas for
+              improvement
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h4>Progress Tracking</h4>
+            <p>
+              Detailed reports and parent-teacher meetings to monitor
+              development
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h4>Study Material</h4>
+            <p>Comprehensive notes, practice sheets, and reference materials</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="flower flower-4">
+        <i class="fas fa-leaf"></i>
+      </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>We're here to answer your questions</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h2>Get In Touch</h2>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="contact-details">
+                <h3>WhatsApp</h3>
+                <p>+91-6204660284</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Instagram</h3>
+                <p>@brainmatethehometutors</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-facebook"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Facebook</h3>
+                <p>BRAIN MATE – The Home Tutors</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p>brainmatethehometutors4u@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>Indore, Madhya Pradesh - 452010</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send us a message</h3>
+            <form>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  class="form-control"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  class="form-control"
+                  placeholder="How can we help you?"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">Brain Mate</div>
+            <p>
+              Personalized home tutoring for students of classes 9 to 12. Our
+              expert tutors provide one-on-one guidance to help students excel
+              academically.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#teachers">Our Teachers</a></li>
+              <li><a href="#courses">Courses</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-section">
+            <h4 class="footer-heading">Classes</h4>
+            <ul class="footer-links">
+              <li><a href="#">Class 9</a></li>
+              <li><a href="#">Class 10</a></li>
+              <li><a href="#">Class 11 (Science)</a></li>
+              <li><a href="#">Class 11 (Commerce)</a></li>
+              <li><a href="#">Class 12 (Science)</a></li>
+              <li><a href="#">Class 12 (Commerce)</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-section">
+            <h4 class="footer-heading">Subjects</h4>
+            <ul class="footer-links">
+              <li><a href="#">Mathematics</a></li>
+              <li><a href="#">Physics</a></li>
+              <li><a href="#">Chemistry</a></li>
+              <li><a href="#">Biology</a></li>
+              <li><a href="#">English</a></li>
+              <li><a href="#">Accountancy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 Brain Mate - The Home Tutors. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
